@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  
+
   root 'static_pages#home'
   get 'about' => 'static_pages#about'
   get 'help' => 'static_pages#help'
   get 'contact' => 'static_pages#contact'
   get 'terms' => 'static_pages#terms'
-
+  get 'workers/profile' => 'profile#show', as: :worker_root  #redirect to profile after sign in
   devise_for :workers, controllers: {registrations: 'workers/registrations'}
 
   # The priority is based upon order of creation: first created -> highest priority.

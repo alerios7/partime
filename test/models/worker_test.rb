@@ -23,6 +23,9 @@
 #  birthdate              :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  college                :string
+#  career                 :string
+#  address                :string
 #
 
 require 'test_helper'

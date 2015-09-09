@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150908030051) do
+ActiveRecord::Schema.define(version: 20150908231941) do
 
   create_table "workers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 20150908030051) do
     t.datetime "birthdate"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "college"
+    t.string   "career"
+    t.string   "address"
   end
 
   add_index "workers", ["confirmation_token"], name: "index_workers_on_confirmation_token", unique: true

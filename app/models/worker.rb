@@ -23,6 +23,9 @@
 #  birthdate              :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  college                :string
+#  career                 :string
+#  address                :string
 #
 
 class Worker < ActiveRecord::Base
@@ -32,7 +35,6 @@ class Worker < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   validates :name, presence: {message: "Debe ingresar su nombre"}
   validates :last_name, presence: {message: "Debe ingresar su apellido"}
-  validates :rut, presence: {message: "Debe ingresar su RUT"}, format: {with: /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\-(k|\d{1})\Z/i,
-                             message: "Formato no válido"},
-                             uniqueness: true
+  validates :rut, format: {with: /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\-(k|\d{1})\Z/i, message: "Formato no válido"},
+                  uniqueness: true
 end

@@ -13,5 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require moment
+//= require bootstrap-datetimepicker
 //= require turbolinks
 //= require_tree .
+
+$(document).on('ready page:load', function(event) {
+  // apply non-idempotent transformations to the body
+  $('.datepicker').datetimepicker({
+      format: 'DD/MM/YYYY'
+  });
+});

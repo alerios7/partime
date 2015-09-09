@@ -40,12 +40,12 @@ class Workers::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.for(:sign_up) << :name << :last_name << :rut 
+    devise_parameter_sanitizer.for(:sign_up) << :name << :last_name
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.for(:account_update) << :name << :last_name << :rut
+    devise_parameter_sanitizer.for(:account_update) << :name << :last_name << :rut << :career << :college << :address << :birthdate
   end
 
   # The path used after sign up.
