@@ -21,6 +21,8 @@ gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'annotate', '~> 2.6.6'
 gem 'devise'
+gem 'has_secure_token'
+
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
