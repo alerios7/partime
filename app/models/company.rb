@@ -26,11 +26,5 @@ class Company < ActiveRecord::Base
   validates :contact_last_name, presence: true
   validates :token, uniqueness: true
   has_secure_token
-  #before_validation :create_token, on: :create
-
-  #private
-
-  #  def create_token
-  #    self.token = SecureRandom.hex(4) unless self.token.present?
-  #  end
+  has_many :employers
 end
