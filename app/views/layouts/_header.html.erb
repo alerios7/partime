@@ -6,35 +6,16 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to "Home", root_path %>
-          </li>
-          <li>
-            <%= link_to "FAQ", help_path %>
-          </li>
-          <li>
-            <%= link_to "Quienes somos", about_path %>
-          </li>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "FAQ", help_path %></li>
+          <li><%= link_to "Quienes somos", about_path %></li>
           <% if worker_signed_in? %>
-            <li class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdown-user" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="true">Mi cuenta
-              <span class="caret"></span>
-             </button>
-             <ul class="dropdown-menu" aria-labelledby="dropdown-user">
-               <li><%= link_to "Mi perfil", worker_root_path %></li>
-               <li><%= link_to "Editar cuenta", edit_worker_registration_path %></li>
-               <li><%= link_to "Mis trabajos", '#' %></li>
-               <li><%= link_to "Cerrar sesión", destroy_worker_session_path, method: :delete %></li>
-             </ul>
-           </li>
+            <%= render 'layouts/worker_menu' %>
+          <% elsif employer_signed_in? %>
+            <%= render 'layouts/employer_menu' %>
           <% else %>
-            <li>
-              <%= link_to "Mi cuenta", new_worker_session_path %>
-            </li>
-            <li>
-              <%= link_to "Cuenta empresa", employer_session_path %>
-            </li>
+            <li><%= link_to "Mi cuenta", new_worker_session_path %></li>
+            <li><%= link_to "Cuenta empresa", employer_session_path %></li>
           <% end %>
         </ul>
       </div>

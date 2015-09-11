@@ -33,8 +33,8 @@ class Worker < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
-  validates :name, presence: {message: "Debe ingresar su nombre"}
-  validates :last_name, presence: {message: "Debe ingresar su apellido"}
-  validates :rut, format: {with: /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\-(k|\d{1})\Z/i, message: "Formato no válido"},
-                  uniqueness: true
+  validates :name, presence: {message: "no puede ser vacio"}
+  validates :last_name, presence: {message: "no puede ser vacio"}
+  validates :rut, format: {with: /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\-(k|\d{1})\Z/i, message: "formato no válido"},
+                  uniqueness: true, on: :update
 end

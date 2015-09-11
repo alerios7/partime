@@ -1,0 +1,12 @@
+<li class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdown-user" data-toggle="dropdown"
+  aria-haspopup="true" aria-expanded="true">Mi cuenta
+  <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-user">
+    <li><%= link_to "Administrar ofertas", '#' %></li>
+    <li><%= link_to "Administrar sucursales", '#' %></li>
+    <li><%= link_to "Editar cuenta", edit_employer_registration_path %></li>
+    <li><%= link_to "Cerrar sesión", destroy_employer_session_path, method: :delete%></li>
+  </ul>
+</li>

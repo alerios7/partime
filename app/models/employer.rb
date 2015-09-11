@@ -30,21 +30,21 @@ class Employer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   validate :company_id_present, on: :create
+  validates :name, presence: {message: "no puede ser vacio"}
+  validates :last_name, presence: {message: "no puede ser vacio"}
   attr_accessor :token
+  before_validation :set_company_id, on: :create
   belongs_to :company
-  
-  
-  
-  def set_company_id(token)
-    company = Company.find_by(token: token)
-    
-    if company.present?
-      self.company_id = company.id 
-    end
-  end
-  
+
+
   protected
+
     def company_id_present
-      errors.add(:company_id, "El token ingresado no tiene asociada ninguna empresa") unless self.company_id.present?
+      errors.add(:token, "no tiene asociada ninguna empresa") unless self.company_id.present?
+    end
+
+    def set_company_id
+      company = Company.find_by(token: self.token)
+      self.company_id = company.id  if company.present?
     end
 end
