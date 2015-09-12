@@ -16,13 +16,18 @@
 #
 
 class Store < ActiveRecord::Base
-  validates :name, presence: {message: "no puede quedar quedar en blanco"}
+  validates :name, presence: {message: "no puede quedar quedar en blanco"}, uniqueness: true
   validates :email, presence: true
   validates :address, presence: true
   before_create :set_company_id, on: :create
 
   belongs_to :company
   belongs_to :employer
+
+  scope :instance_company, lambda {|employer| where("stores.company_id = ?", employer.company_id )}
+  ->{where(company_id: current_employer.company_id)}
+
+  paginates_per 25
 
   protected
   def set_company_id

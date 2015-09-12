@@ -2,7 +2,7 @@ class StoresController < ApplicationController
   before_action :authenticate_employer!, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
-    @stores = Store.find_by(company_id: current_employer.company_id)
+    @stores = Store.instance_company(current_employer).page(params[:page])
   end
 
   def show
@@ -19,6 +19,13 @@ class StoresController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @store = Store.find params[:id]
+    @store.destroy
+    flash[:success] = "Micropost deleted"
+    redirect_to stores_path
   end
 
   def store_params

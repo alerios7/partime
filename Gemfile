@@ -7,8 +7,7 @@ gem 'faker', '1.4.2'
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
 gem 'fog', '1.33.0'
-gem 'will_paginate', '3.0.7'
-gem 'bootstrap-will_paginate', '0.0.10'
+
 gem 'bootstrap-sass', '3.3.5'
 gem 'sass-rails',   '5.0.2'
 gem 'momentjs-rails', '>= 2.9.0'
@@ -23,6 +22,8 @@ gem 'annotate', '~> 2.6.6'
 gem 'devise'
 gem 'has_secure_token'
 gem 'cocoon', '1.2.6'
+gem 'kaminari', '0.16.3'
+gem 'ransack', '1.7.0'
 
 
 group :development, :test do
