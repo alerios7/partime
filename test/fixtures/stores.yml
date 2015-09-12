@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: stores
+#
+#  id               :integer          not null, primary key
+#  name             :string
+#  email            :string
+#  manager_name     :string
+#  manager_lastname :string
+#  phone            :string
+#  address          :string
+#  company_id       :integer
+#  employer_id      :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  email: MyString
+  manager_name: MyString
+  manager_lastname: MyString
+  phone: MyString
+
+two:
+  name: MyString
+  email: MyString
+  manager_name: MyString
+  manager_lastname: MyString
+  phone: MyString
