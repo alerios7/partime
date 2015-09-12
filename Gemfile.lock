@@ -66,6 +66,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    cocoon (1.2.6)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -167,7 +168,7 @@ GEM
       fog-core
       fog-json
       fog-xml
-    fog-sakuracloud (1.1.0)
+    fog-sakuracloud (1.1.1)
       fog-core
       fog-json
     fog-serverlove (0.1.2)
@@ -357,6 +358,7 @@ DEPENDENCIES
   bootstrap3-datetimepicker-rails (~> 4.15.35)
   byebug (= 3.4.0)
   carrierwave (= 0.10.0)
+  cocoon (= 1.2.6)
   coffee-rails (= 4.1.0)
   devise
   faker (= 1.4.2)
@@ -382,3 +384,6 @@ DEPENDENCIES
   uglifier (= 2.5.3)
   web-console (= 2.0.0.beta3)
   will_paginate (= 3.0.7)
+
+BUNDLED WITH
+   1.10.6

@@ -16,4 +16,17 @@
 #
 
 class Store < ActiveRecord::Base
+  validates :name, presence: {message: "no puede quedar quedar en blanco"}
+  validates :email, presence: true
+  validates :address, presence: true
+  before_create :set_company_id, on: :create
+
+  belongs_to :company
+  belongs_to :employer
+
+  protected
+  def set_company_id
+    self.company_id = Employer.find_by(id: self.employer_id).company_id
+  end
+
 end

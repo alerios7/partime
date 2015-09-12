@@ -16,6 +16,7 @@
 //= require moment
 //= require bootstrap-datetimepicker
 //= require turbolinks
+//= require cocoon
 //= require_tree .
 
 $(document).on('ready page:load', function(event) {

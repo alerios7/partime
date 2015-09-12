@@ -22,6 +22,7 @@ gem 'sdoc',         '0.4.0', group: :doc
 gem 'annotate', '~> 2.6.6'
 gem 'devise'
 gem 'has_secure_token'
+gem 'cocoon', '1.2.6'
 
 
 group :development, :test do
