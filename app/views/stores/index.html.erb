@@ -6,12 +6,15 @@
 </div>
 
   <%= paginate @stores %>
-
+<ul>
   <% @stores.each do |store| %>
-      <%= store.name %>
-      <%= link_to "ver", '#', class: "btn btn-link" %>
-      <%= link_to "editar", edit_store_path(store), class: "btn btn-link" %>
-      <%= link_to "eliminar", store_path(store), method: :delete, data: {confirm: "Seguro que deseas eliminar la tienda?"}  %></br>
+      <li>
+        <%= store.name %>
+        <%= link_to "ver", store_path(store), class: "btn btn-link" %>
+        <%= link_to "editar", edit_store_path(store), class: "btn btn-link" %>
+        <%= link_to "eliminar", store_path(store), method: :delete, data: {confirm: "Seguro que deseas eliminar la tienda?"}  %></br>
+      </li>
   <% end %>
+</ul>
 
   <%= link_to "Crear tienda", new_store_path, class: "btn btn-primary"  %>

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-6">
+    <h3><%= @store.name %></h3>
+    <ul>
+      <li>Correo electrónico: <%= @store.email %></li>
+      <li>Nombre Jefe de Tienda: <%= "#{@store.manager_name} #{@store.manager_lastname}" %></li>
+      <li>Telefono: <%= @store.phone %></li>
+      <li>Dirección: <%= @store.address %></li>
+    </ul>
+    <%= link_to "editar información", edit_store_path %></br>
+    <%= link_to "volver", stores_path %>
+  </div>
+</div>

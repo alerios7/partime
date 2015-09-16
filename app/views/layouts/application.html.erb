@@ -9,7 +9,9 @@
   <body>
     <%= render 'layouts/header' %>
     <%= render 'layouts/flashes' %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <%= render 'layouts/footer'  %>
   </body>
 </html>

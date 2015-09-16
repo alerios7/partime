@@ -33,7 +33,7 @@ class Employer < ActiveRecord::Base
   validates :name, presence: {message: "no puede ser vacio"}
   validates :last_name, presence: {message: "no puede ser vacio"}
   attr_accessor :token
-  #before_validation :set_company_id, on: :create
+  before_validation :set_company_id, on: :create
   belongs_to :company
   has_many :stores
 

@@ -27,5 +27,7 @@ class Company < ActiveRecord::Base
   validates :token, uniqueness: true
   has_secure_token
   has_many :employers
-  has_many :stores, :through => :employers
+  has_many :stores
+
+
 end

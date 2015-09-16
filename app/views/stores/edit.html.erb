@@ -1,0 +1,33 @@
+<% provide(:title, "Nueva Tienda") %>
+<div class="row">
+  <div class="col-md-4">
+    <h2>Nueva Tienda</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <%= form_for @store do |f| %>
+
+      <%= f.label :name, "Nombre Tienda"  %>
+      <%= f.text_field :name, autofocus: true, class: "form-control" %>
+
+      <%= f.label :email, "Correo Electrónico" %>
+      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+
+      <%= f.label :address, "Dirección"  %>
+      <%= f.text_field :address, autofocus: true, class: "form-control" %>
+
+      <%= f.label :manager_name, "Nombre Jefe de Tienda"  %>
+      <%= f.text_field :manager_name, autofocus: true, class: "form-control" %>
+
+      <%= f.label :manager_lastname, "Apellido Jefe de Tienda"  %>
+      <%= f.text_field :manager_lastname, autofocus: true, class: "form-control" %>
+
+      <%= f.label :phone, "Telefono"  %>
+      <%= f.text_field :phone, autofocus: true, class: "form-control" %>
+
+      <%= f.submit "Guardar cambios", class: "btn btn-primary" %>
+
+    <% end %>
+  </div>
+</div>

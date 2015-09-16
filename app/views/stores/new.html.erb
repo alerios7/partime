@@ -7,16 +7,16 @@
 <div class="row">
   <%= form_for @store do |f| %>
     <div class="col-md-3">
-      <%= f.label :name  %>
-      <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "Nombre Tienda" %>
+      <%= f.label :name, "Nombre Tienda"  %>
+      <%= f.text_field :name, autofocus: true, class: "form-control" %>
     </div>
     <div class="col-md-3">
-      <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Correo Electrónico" %>
+      <%= f.label :email, "Correo Electrónico" %>
+      <%= f.email_field :email, autofocus: true, class: "form-control" %>
     </div>
     <div class="col-md-3">
-      <%= f.label :address  %>
-      <%= f.text_field :address, autofocus: true, class: "form-control", placeholder: "Dirección" %>
+      <%= f.label :address, "Dirección"  %>
+      <%= f.text_field :address, autofocus: true, class: "form-control" %>
     </div>
     <div class="col-md-2"></br>
     <%= f.submit "Crear Tienda", class: "btn btn-primary" %>
