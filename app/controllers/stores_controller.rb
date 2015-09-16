@@ -1,5 +1,6 @@
 class StoresController < ApplicationController
   before_action :authenticate_employer!, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :validate_company, only: [:edit, :update, :destroy]
   
   def index
     @stores = Store.instance_company(current_employer).page(params[:page])
@@ -44,6 +45,11 @@ class StoresController < ApplicationController
 
   def store_params
     params.require(:store).permit(:name, :email, :address, :manager_name, :manager_lastname, :phone)
+  end
+
+  def validate_company
+    @store = Store.find(params[:id])
+    redirect_to stores_path unless current_employer.company_id == @store.company_id
   end
 
 end
