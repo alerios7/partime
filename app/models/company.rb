@@ -29,6 +29,5 @@ class Company < ActiveRecord::Base
   has_many :employers, dependent: :destroy
   has_many :stores, dependent: :destroy
   has_many :jobs, through: :stores, dependent: :destroy
-
-
+ 
 end

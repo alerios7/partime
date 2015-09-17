@@ -43,13 +43,14 @@ class StoresController < ApplicationController
     redirect_to stores_path
   end
 
-  def store_params
-    params.require(:store).permit(:name, :email, :address, :manager_name, :manager_lastname, :phone)
-  end
+  private
+    def store_params
+      params.require(:store).permit(:name, :email, :address, :manager_name, :manager_lastname, :phone)
+    end
 
-  def validate_company
-    @store = Store.find(params[:id])
-    redirect_to stores_path unless current_employer.company_id == @store.company_id
-  end
+    def validate_company
+      @store = Store.find(params[:id])
+      redirect_to stores_path unless current_employer.company_id == @store.company_id
+    end
 
 end

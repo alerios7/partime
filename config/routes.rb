@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get 'terms' => 'static_pages#terms'
   get 'workers/profile' => 'profile#show', as: :worker_root  #redirect to profile after sign in
 
-  resources :stores
+  resources :stores do
+    resources :jobs
+  end
+  #resources :jobs
 
   devise_for :workers, controllers: {registrations: 'workers/registrations'}
   devise_for :employers, controllers: {registrations: 'employers/registrations'}

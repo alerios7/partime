@@ -33,8 +33,8 @@ class Store < ActiveRecord::Base
   paginates_per 25
 
   protected
-  def set_company_id
-    self.company_id = Employer.find_by(id: self.employer_id).company_id
-  end
+    def set_company_id
+      self.company_id = Employer.find_by(id: self.employer_id).company_id
+    end
 
 end

@@ -24,4 +24,7 @@ $(document).on('ready page:load', function(event) {
   $('.datepicker').datetimepicker({
       format: 'DD/MM/YYYY'
   });
+  $('.datetimepicker').datetimepicker({
+      format: 'DD/MM/YYYY, H:mm'
+  });
 });

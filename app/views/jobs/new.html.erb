@@ -1,0 +1,32 @@
+<%= provide(:title, "Nuevo trabajo") %>
+<div class="row">
+  <div class="col-md-4">
+    <h2>Nuevo trabajo</h2>
+  </div>
+</div>
+
+<%= form_for ([@store, @job])  do |f| %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :title, "Título" %>
+      <%= f.text_field :title, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :start_date, "Fecha y Hora de inicio" %>
+      <%= f.text_field :start_date, class: "form-control datetimepicker" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :finish_date, "Fecha y Hora de término" %>
+      <%= f.text_field :finish_date, class: "form-control datetimepicker" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :body, "Descripción" %>
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      </br><%= f.submit "Crear", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
