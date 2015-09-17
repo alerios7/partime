@@ -1,7 +1,7 @@
 class StoresController < ApplicationController
   before_action :authenticate_employer!, only: [:index, :new, :create, :edit, :update, :destroy]
   before_action :validate_company, only: [:edit, :update, :destroy]
-  
+
   def index
     @stores = Store.instance_company(current_employer).page(params[:page])
   end
@@ -28,7 +28,7 @@ class StoresController < ApplicationController
   end
 
   def update
-    @store = Store.find(params[:id])
+    @store = current_employer.stores.find(params[:id])
     if @store.update(store_params)
       redirect_to store_path
     else
