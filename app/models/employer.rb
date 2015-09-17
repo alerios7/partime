@@ -36,6 +36,7 @@ class Employer < ActiveRecord::Base
   before_validation :set_company_id, on: :create
   belongs_to :company
   has_many :stores
+  has_many :jobs
 
   protected
 

@@ -26,8 +26,9 @@ class Company < ActiveRecord::Base
   validates :contact_last_name, presence: true
   validates :token, uniqueness: true
   has_secure_token
-  has_many :employers
-  has_many :stores
+  has_many :employers, dependent: :destroy
+  has_many :stores, dependent: :destroy
+  has_many :jobs, through: :stores, dependent: :destroy
 
 
 end
