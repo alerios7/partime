@@ -8,6 +8,8 @@ class StoresController < ApplicationController
 
   def show
     @store = Store.find(params[:id])
+    @jobs = @store.jobs
+    @job = @store.jobs.new
   end
 
   def new

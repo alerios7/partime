@@ -7,7 +7,11 @@
       <li>Telefono: <%= @store.phone %></li>
       <li>Dirección: <%= @store.address %></li>
     </ul>
-    <%= link_to "editar información", edit_store_path %></br>
+    <%= link_to "editar información", edit_store_path(@store) %></br>
     <%= link_to "volver", stores_path %>
   </div>
 </div>
+<% if @jobs.present? %>
+<%= render 'stores/jobs'  %>
+<% end %>
+<%= render 'stores/job_form' %>
