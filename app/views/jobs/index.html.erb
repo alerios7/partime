@@ -1,0 +1,29 @@
+<%= provide(:title, "Trabajos #{@store.name}") %>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Fecha y Hora de Inicio</th>
+          <th>Fecha y Hora de Término</th>
+          <th>Estado</th>
+          <th>Postulantes/Seleccionado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @jobs.each do |job| %>
+          <tr>
+            <td><%= job.title %></td>
+            <td><%= job.body %></td>
+            <td><%= job.start_date %></td>
+            <td><%= job.finish_date %></td>
+            <td><%= job.state %></td>
+            <td><%= link_to "Postulantes", '#' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

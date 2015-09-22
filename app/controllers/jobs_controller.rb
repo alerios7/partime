@@ -14,6 +14,7 @@ class JobsController < ApplicationController
   def create
     @store = Store.find(params[:store_id])
     @job = @store.jobs.new(job_params)
+    @job.employer_id = current_employer.id
     if @job.save
       redirect_to store_jobs_path(@store)
     else

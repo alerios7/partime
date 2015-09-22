@@ -25,11 +25,11 @@ class Job < ActiveRecord::Base
   belongs_to :worker
   belongs_to :employer
 
-  before_create :set_worker_id, on: :create
+  before_save :set_default_state, on: :create
 
 
   protected
-    def set_worker_id
-      self.employer_id = Employer.find_by(id: self.employer_id).id
+    def set_default_state
+      self.state = "awaiting"
     end
 end
