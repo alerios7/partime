@@ -6,21 +6,20 @@
         <tr>
           <th>Título</th>
           <th>Descripción</th>
-          <th>Fecha y Hora de Inicio</th>
-          <th>Fecha y Hora de Término</th>
+          <th>Inicio</th>
+          <th>Término</th>
           <th>Estado</th>
-          <th>Postulantes/Seleccionado</th>
-          <th>Eliminar</th>
+          <th>Postulantes/</br>Seleccionado</th>
         </tr>
       </thead>
       <tbody>
         <% @jobs.each do |job| %>
           <% if job.persisted? %>
           <tr>
-            <td><%= job.title %></td>
-            <td><%= job.body %></td>
-            <td><%= job.start_date %></td>
-            <td><%= job.finish_date %></td>
+            <td><%= link_to job.title, store_job_path(@store, job) %></td>
+            <td><%= truncate(job.body, {length: 30}) %></td>
+            <td><%= job.start_date.strftime('%d/%m/%Y, %H:%M') %></td>
+            <td><%= job.finish_date.strftime('%d/%m/%Y, %H:%M') %></td>
             <td><%= job.state %></td>
             <td><%= link_to "Postulantes", '#' %></td>
             <td><%= link_to "eliminar", store_job_path(@store, job), method: :delete, data: {confirm: "Estas seguro que deseas eliminar este trabajo"}  %></td>

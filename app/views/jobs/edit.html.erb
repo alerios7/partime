@@ -1,0 +1,27 @@
+<% provide(:title, "Editar tienda") %>
+<%= form_for ([@store, @job])  do |f| %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :title, "Título" %>
+      <%= f.text_field :title, autofocus: true, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :start_date, "Fecha y Hora de inicio" %>
+      <%= f.text_field :start_date, value: f.object.start_date.strftime('%d/%m/%Y, %H:%M'), class: "form-control datetimepicker" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.label :finish_date, "Fecha y Hora de término" %>
+      <%= f.text_field :finish_date, value: f.object.finish_date.strftime('%d/%m/%Y, %H:%M'), class: "form-control datetimepicker" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.label :body, "Descripción" %>
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+    </br><%= f.submit "Actualizar", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+<%= link_to 'volver', :back %>

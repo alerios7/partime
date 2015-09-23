@@ -1,6 +1,11 @@
 class JobsController < ApplicationController
   before_action :authenticate_employer!, only: [:new, :create, :edit, :update, :destroy]
 
+  def show
+    @store = Store.find(params[:store_id])
+    @job = @store.jobs.find(params[:id])
+  end
+
   def create
     @store = Store.find(params[:store_id])
     @job = @store.jobs.new(job_params)
@@ -20,6 +25,21 @@ class JobsController < ApplicationController
       redirect_to store_path(@store), notice: "Se ha eliminado correctamente"
     else
       redirect_to store_path(@store), notice: "No se ha podido eliminar"
+    end
+  end
+
+  def edit
+    @store = Store.find(params[:store_id])
+    @job = @store.jobs.find(params[:id])
+  end
+
+  def update
+    @store = Store.find(params[:store_id])
+    @job = @store.jobs.find(params[:id])
+    if @job.update(job_params)
+      redirect_to store_job_path(@store, @job), notice: "Se actualizo la información"
+    else
+      render :edit
     end
   end
 

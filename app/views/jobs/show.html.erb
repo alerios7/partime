@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3>Tienda: <%= @store.name %></h3>
+    <h4>Trabajo: <%= @job.title %></h4>
+    <h4>Descripción:</h4>
+    <p>
+      Lugar: <%= @store.address %></br>
+      Inicio: <%= @job.start_date.strftime('%d/%m/%Y, %H:%M') %></br>Termino: <%= @job.finish_date.strftime('%d/%m/%Y, %H:%M') %></br>
+      <%= @job.body %>
+    </p>
+    <% if employer_signed_in? %>
+      <%= link_to "editar", edit_store_job_path(@store, @job) %>
+    <% end %>
+  </div>
+</div>
